@@ -17,13 +17,21 @@ const year = time.getFullYear().toString().padStart(2,'0')
 
 useEffect(() => {
   setInterval (() => {
-    setTime(new Date())
+    setTime (new Date())
   }, 1000)
 }, [])
   return (
-    <Fragment>
-      <div>{hour} : {minute} : {second}</div>
-      <div>{day}.{month}.{year}</div>
+     <Fragment>
+      <div className="container">
+        <div className="card">
+          <h3 className="clock">
+            {hour}:{minute}:{second}
+          </h3>
+          <p className="date">
+            {day}.{month}.{year}
+          </p>
+        </div>
+      </div>
     </Fragment>
   )
 }
